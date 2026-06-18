@@ -1,0 +1,159 @@
+/* -- About.css -- */
+
+/* ── ABOUT HERO ── */
+.about-hero {
+  position: relative;
+  width: auto;
+  height: clamp(200px, 40vh, 300px);
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 80%;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  padding: clamp(40px, 8vw, 60px) clamp(20px, 5vw, 120px);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(40px, 8vw, 200px);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-heading {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.about-heading span {
+  font-weight: 700;
+}
+
+.about-quote {
+  border-left: 3px solid var(--green);
+  padding-left: 20px;
+}
+
+.about-quote p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-mid);
+}
+
+.about-image {
+  width: min(100%, clamp(280px, 50vw, 389px));
+  height: auto;
+  aspect-ratio: 389/228;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* ── WHY CHOOSE US ── */
+.why-section {
+  padding: clamp(15px, 3vw, 16px) clamp(20px, 5vw, 120px) clamp(40px, 8vw, 56px);
+  text-align: center;
+}
+
+.why-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 7.5px;
+}
+
+.why-underline img {
+  margin: 0 auto 32px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.why-col {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.why-card {
+  border: 1.6px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: left;
+}
+
+.why-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.why-icon.green {
+  background: var(--green);
+}
+.why-icon.orange {
+  background: var(--orange);
+}
+
+.why-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.why-center-img {
+  width: 387px;
+  height: 406px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.why-center-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

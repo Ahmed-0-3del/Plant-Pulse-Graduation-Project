@@ -1,0 +1,240 @@
+/* -- Style.css -- */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #399B25;
+  --orange: #FF8C27;
+  --orange-hover: #f06520;
+  --red: #D32F2F;
+  --text-dark: #1F1F1F;
+  --text-mid: #4A4A4A;
+  --border: #EDEDED;
+  --card-bg: #F8F9FA;
+  --page-bg: #ffffff;
+  --footer-bg: #EBF5E9;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--page-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAV ── */
+nav {
+  background: #F5F5F5;
+  padding: 0 max(20px, calc((100% - 1200px) / 2));
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(30px, 5vw, 50px);
+  list-style: none;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover       { color: var(--green); }
+.nav-links a.active      { color: var(--green); font-weight: 700; }
+
+.btn-login {
+  background: var(--orange);
+  color: #fff;
+  height: 36px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-login:hover { background: var(--orange-hover); }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 15px;
+  }
+  
+  .nav-links {
+    gap: clamp(15px, 4vw, 30px);
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+  }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--footer-bg);
+  padding: 70px 90px 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 32px;
+}
+
+.footer-brand .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer-brand .logo img {
+  height: 65px;
+  width: auto;
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.social-icon:hover { background: #c8dcc8; }
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.footer-col ul              { list-style: none; }
+.footer-col ul li           { margin-bottom: 8px; }
+
+.footer-col ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--text-mid);
+  transition: color 0.15s;
+}
+
+.footer-col ul li a:hover { color: var(--green); }
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #C7C7C7;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-bottom-links a {
+  font-size: 14px;
+  color: var(--text-mid);
+  text-decoration: none;
+}
+
+.footer-bottom-links a:hover { color: var(--green); }
+/* ── GLOBAL CONFLICT FIXES ── */
+/* Ensure body never gets overridden by page-specific CSS */
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh;
+  align-items: unset !important;
+  justify-content: unset !important;
+}
+
+/* Login & Signup pages - body flex reset handled by wrappers */
+.login-page-wrapper,
+.signup-page-wrapper {
+  width: 100%;
+  flex: 1;
+}
+
+/* Scanning page wrapper */
+.scanning-page-wrapper {
+  width: 100%;
+  flex: 1;
+}
+
+/* Result pages */
+.result-healthy-page,
+.result-disease-page {
+  width: 100%;
+  flex: 1;
+}

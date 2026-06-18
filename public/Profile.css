@@ -1,0 +1,602 @@
+/* -- Profile.css -- */
+
+/* ── MAIN LAYOUT ── */
+.profile-page main {
+  flex: 1;
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 120px);
+  width: 100%;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  gap: clamp(15px, 3vw, 20px);
+}
+
+/* ── NAV USER ── */
+.profile-page .nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-page .nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-page .nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── SIDEBAR CARD ── */
+.sidebar-card {
+  background: var(--card-bg);
+  height: auto;
+  width: min(100%, clamp(280px, 30vw, 389px));
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: clamp(20px, 4vw, 32px);
+  margin-right: clamp(15px, 3vw, 30px);
+}
+
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-circle {
+  width: clamp(70px, 15vw, 100px);
+  height: clamp(70px, 15vw, 100px);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-edit {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 30px;
+  width: 30px;
+  background: var(--green);
+  border-radius: 50%;
+  border: 2px solid var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.user-name {
+  text-align: center;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: clamp(30px, 6vw, 60px) clamp(15px, 4vw, 40px);
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: clamp(20px, 4vw, 40px) clamp(15px, 4vw, 25px);
+  }
+}
+
+.user-email {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  margin-bottom: 30px;
+}
+
+/* ── SIDEBAR MENU ── */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.menu-active-slider {
+  position: absolute;
+  left: 0;
+  height: 55px;
+  width: 100%;
+  background: #fff4e9;
+  border-left: 4px solid #399b25;
+  border-radius: 15px;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  height: 55px;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.menu-item.active {
+  background: #fff4e9;
+  color: var(--green);
+}
+
+.menu-item:not(.active):hover {
+  background: #f0f1f0;
+}
+
+.menu-item.profile-sheet {
+  color: var(--green);
+}
+.menu-item.change-pw {
+  color: var(--green);
+}
+.menu-item.logout {
+  color: var(--red);
+}
+
+/* ── PROFILE INFO CARD ── */
+.info-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  height: auto;
+  flex: 1;
+  padding: 32px;
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.info-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  padding: 6px 16px;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background: #e6f1ec;
+}
+
+.edit-btn.save-mode {
+  background: #e6f1ec;
+  color: var(--green);
+  width: 83px;
+  justify-content: center;
+}
+
+.edit-btn.save-mode:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.field-group {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.field-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.field-label {
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.field-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.required-star {
+  display: none;
+  color: var(--red);
+  margin-left: 2px;
+}
+
+.info-card.edit-mode .required-star {
+  display: inline;
+}
+
+.field-input {
+  display: none;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--text-dark);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  border-color: #399B25;
+  box-shadow: 0 0 0 2px rgba(57,155,37,0.12);
+}
+
+/* show input in edit mode */
+.info-card.edit-mode .field-input {
+  display: block;
+}
+
+/* hide the static .field-value when editing (name field) */
+.info-card.edit-mode .field-value {
+  display: none;
+}
+
+/* keep read-only field values always visible */
+.info-card.edit-mode .field-readonly .field-value {
+  display: block;
+}
+
+/* in normal mode: hide input, show value */
+.info-card:not(.edit-mode) .field-input {
+  display: none;
+}
+.info-card:not(.edit-mode) .field-value {
+  display: block;
+}
+
+/* show input always in password tab (no edit-mode needed) */
+.info-card .pw-field-input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--text-dark);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.info-card .pw-field-input:focus {
+  border-color: #399B25;
+  box-shadow: 0 0 0 2px rgba(57,155,37,0.12);
+}
+
+/* ── CHANGE PASSWORD CARDS ── */
+.change-pw-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  height: auto;
+  flex: 1;
+  padding: 32px;
+}
+
+.next-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.next-btn:hover {
+  background: #2e8020;
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.forgot-link:hover {
+  color: #2e8020;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ── PASSWORD INPUT WRAP ── */
+.pw-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.pw-input-wrap .field-input {
+  display: block;
+  width: 100%;
+  padding-right: 48px;
+}
+
+.pw-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.pw-toggle:hover {
+  opacity: 1;
+}
+.pw-toggle.visible {
+  opacity: 1;
+}
+
+/* ── OTP ── */
+.otp-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.otp-input {
+  width: 72px;
+  height: 72px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text-dark);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.otp-input:focus {
+  border-color: #399b25;
+}
+.otp-input.error {
+  border-color: #d32f2f;
+}
+
+/* ── SUCCESS POPUP ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.show {
+  display: flex;
+}
+
+.popup-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 794px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-icon {
+  margin-bottom: 16px;
+}
+
+.popup-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.popup-subtitle {
+  font-size: 16px;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+}
+
+.popup-btn {
+  width: 210px;
+  padding: 16px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-btn:hover {
+  background: #2e8020;
+}
+
+/* ── LOGOUT POPUP ── */
+.logout-box {
+  width: 800px;
+  height: 402px;
+  padding: 35px 24px 24px 24px;
+}
+
+.logout-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+
+.logout-subtitle {
+  font-size: 16px;
+  color: var(--text-mid);
+  margin-bottom: 50px;
+}
+
+.logout-btns {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.logout-confirm-btn {
+  flex: 1;
+  padding: 18px;
+  background: transparent;
+  color: var(--red);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 2px solid var(--red);
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-confirm-btn:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+.logout-cancel-btn {
+  flex: 1;
+  padding: 18px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-cancel-btn:hover {
+  background: #2e8020;
+}

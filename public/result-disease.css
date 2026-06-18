@@ -1,0 +1,290 @@
+/* result-disease.css */
+
+.result-disease-page .main-content {
+  padding: 40px 0 70px;
+}
+.result-disease-page .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.result-disease-page .breadcrumb {
+  background: white;
+  padding: 12px 0;
+}
+.result-disease-page .breadcrumb .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+.result-disease-page .breadcrumb span.active {
+  color: #399b25;
+  font-weight: 500;
+}
+
+.result-disease-page .result-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Left image panel ── */
+.result-disease-page .result-image {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 24px;
+  position: sticky;
+  top: 90px;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  height: 484px;
+}
+.result-disease-page .plant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.result-disease-page .plant-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.result-disease-page .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.result-disease-page .disease-badge {
+  font-size: 10px;
+  font-weight: 500;
+  background: #fbeaea;
+  border: 0.4px solid #eb9f9f;
+  color: #d32f2f;
+}
+.result-disease-page .status-badge svg {
+  flex-shrink: 0;
+}
+
+.result-disease-page .result-image img {
+  width: 100%;
+  height: 297px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: auto;
+}
+.result-disease-page .scan-another-btn {
+  width: 100%;
+  background: #399b25;
+  color: #fff;
+  margin-top: 16px;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.result-disease-page .scan-another-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+}
+
+/* ── Right details panel ── */
+.result-disease-page .result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.result-disease-page .result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.result-disease-page .result-title {
+  font-size: 33px;
+  font-weight: 700;
+  color: #399b25;
+}
+
+.result-disease-page .completion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ebf5e9;
+  color: #399b25;
+  padding: 8px 14px;
+  border-radius: 63px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 0.4px solid #a4d19b;
+}
+
+/* ── 3 Stat Cards ── */
+.result-disease-page .stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.result-disease-page .stat-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  min-height: 65px;
+  box-sizing: border-box;
+}
+.result-disease-page .stat-card svg {
+  flex-shrink: 0;
+}
+
+/* Disease card — Red */
+.result-disease-page .stat-card.disease-card {
+  border: 0.4px solid #eb9f9f;
+  background: #fbeaea;
+}
+/* Accuracy card — Green */
+.result-disease-page .stat-card.accuracy-card {
+  border: 0.4px solid #a4d19b;
+  background: #ebf5e9;
+}
+/* Severity card — Orange */
+.result-disease-page .stat-card.severity-card {
+  border: 0.4px solid #ffca9c;
+  background: #fff4e9;
+}
+
+.result-disease-page .stat-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.result-disease-page .stat-label {
+  font-size: 12px;
+  color: #1f1f1f;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.result-disease-page .stat-main {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Plant Status ── */
+.result-disease-page .info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  height: 159px;
+  max-height: 159px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 0.4px solid #acacac;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.result-disease-page .section-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+.result-disease-page .section-text {
+  font-size: 11px;
+  color: #1f1f1f;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Treatment Steps ── */
+.result-disease-page .care-tips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  height: 159px;
+  max-height: 159px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 0.4px solid #a4d19b;
+  background: #ebf5e9;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.result-disease-page .tips-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.result-disease-page .tips-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin: 0;
+}
+.result-disease-page .tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 8px;
+  margin: 0;
+}
+.result-disease-page .tips-list li {
+  padding-left: 12px;
+  position: relative;
+  font-size: 11px;
+  color: #1f1f1f;
+  line-height: 1.5;
+}
+.result-disease-page .tips-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #399b25;
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  .result-disease-page .result-layout {
+    grid-template-columns: 1fr;
+  }
+  .result-disease-page .result-image {
+    height: auto;
+    position: static;
+  }
+  .result-disease-page .container {
+    padding: 0 16px;
+  }
+  .result-disease-page .info-section,
+  .result-disease-page .care-tips {
+    max-height: none;
+  }
+}
